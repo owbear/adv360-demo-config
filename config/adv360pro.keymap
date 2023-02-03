@@ -62,7 +62,9 @@
     combos {
         compatible = "zmk,combos";
 
-        COMBO(cut, &kp LS(DEL), 39 40)
+        COMBO(cut, &kp LS(DEL), 43 44)
+        COMBO(copy, &kp LC(INS), 44 45)
+        COMBO(paste, &kp LS(INS), 45 46)
     };
 
     keymap {
