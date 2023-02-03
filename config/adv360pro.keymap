@@ -19,6 +19,14 @@
 #define LEFT_KEYS 0 1 2 3 4 5  14 15 16 17 18 19  26 27 28 29 30 31  38 39 40 41 42 43
 #define RIGHT_KEYS 8 9 10 11 12 13  20 21 22 23 24 25  32 33 34 35 36 37  44 45 46 47 48  49
 
+#define COMBO(NAME, BINDINGS, KEYPOS) \
+  combo_##NAME { \
+    timeout-ms = <50>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <0>; \
+  };
+
 / {
     /* remove unused keys from layout and move thumb cluster to bottom */
     chosen {
@@ -51,6 +59,12 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        COMBO(cut, &kp LS(DEL), 39 40)
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -75,7 +89,7 @@
                 ___       &kp PRCNT &kp CARET &kp LBRC  &kp RBRC  &kp TILDE                          &kp PLUS  &kp N1    &kp N2    &kp N3    &kp UNDER &kp ENTER
                 ___       ___       ___       ___       ___                                                    U_WH_D    U_WH_U    U_BTN1    U_BTN2    ___
                                                                   ___       ___            ___       ___
-                                                        ___       ___       &kp K_APP      ___       ___       ___
+                                                        ___       ___       &kp K_APP      ___       ___       &kp N0
                                                                             ___            ___
             >;
         };
