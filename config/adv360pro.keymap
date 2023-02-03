@@ -11,11 +11,11 @@
 #define ___ &trans
 
 #define BASE 0
-#define CMAK 1
+#define SYM 1
 #define KP 2
-#define FN 3
-#define MOD 4
-#define MS 5
+#define MOD 3
+#define MS 4
+
 #define LEFT_KEYS 0 1 2 3 4 5  14 15 16 17 18 19  26 27 28 29 30 31  38 39 40 41 42 43
 #define RIGHT_KEYS 8 9 10 11 12 13  20 21 22 23 24 25  32 33 34 35 36 37  44 45 46 47 48  49
 
@@ -56,50 +56,37 @@
 
         base_layer {
             bindings = <
-                &kp EQUAL    &kp N1    &kp N2       &kp N3       &kp N4        &kp N5    &tog KP        &mo MOD   &kp N6    &kp N7       &kp N8      &kp N9       &kp N0         &kp MINUS
-                &kp TAB      &kp Q     &kp W        &kp E        &kp R         &kp T     &tog CMAK      &tog MS   &kp Y     &kp U        &kp I       &kp O        &kp P          &kp BSLH
-                &mt LGUI ESC &kp A     &kp S        &lhm LALT D  &lhm LCTRL D  &kp G     &none          &none     &kp H     &rhm RCTRL J &rhm LALT K &rhm RSHFT L &rhm RGUI SEMI &kp SQT
-                &kp LSHFT    &kp Z     &lhm LSHFT X &kp C        &kp V         &kp B                              &kp N     &kp M        &kp COMMA   &kp DOT      &kp FSLH       &kp RSHFT
-                &mo FN       &kp GRAVE &kp CAPS     &kp LEFT     &kp RIGHT                                                  &kp DOWN     &kp UP      &kp LBKT     &kp RBKT       &mo FN
-                                                                               &kp LCTRL &kp LALT       &kp LGUI  &kp RCTRL
+                &kp EQUAL    &kp F1    &kp F2       &kp F3       &kp F4        &kp F5    &tog KP        &mo MOD   &kp F6    &kp F7       &kp F8      &kp F9       &kp F10        &kp F11
+                &kp TAB      &kp Q     &kp W        &kp E        &kp R         &kp T     &tog SYM       &tog MS   &kp Y     &kp U        &kp I       &kp O        &kp P          &kp F12
+                &mt LGUI ESC &kp A     &kp S        &lhm LALT D  &lhm LCTRL F  &kp G     &none          &none     &kp H     &rhm RCTRL J &rhm LALT K &rhm RSHFT L &rhm RGUI SEMI &kp SQT
+                &kp LSHFT    &kp Z     &lhm LSHFT X &kp C        &kp V         &kp B                              &kp N     &kp M        &kp COMMA   &kp DOT      &kp FSLH       &mt RSHFT BSLH
+                ___          &kp GRAVE &kp CAPS     &kp LEFT     &kp RIGHT                                                  &kp DOWN     &kp UP      &kp LBKT     &kp RBKT       ___
+                                                                               &mo SYM   &kp LALT       &kp RALT  &mo SYM
                                                                  &kp BSPC      &kp DEL   &kp HOME       &kp PG_UP &kp ENTER &kp SPACE
                                                                                          &kp END        &kp PG_DN
             >;
         };
 
-        colemak_layer {
+        symbol_layer {
             bindings = <
                 ___       ___       ___       ___       ___       ___       ___            ___       ___       ___       ___       ___       ___       ___
-                ___       &kp Q     &kp W     &kp F     &kp P     &kp B     ___            ___       &kp J     &kp L     &kp U     &kp Y     &kp SQT   &kp BSLH
-                ___       &kp A     &kp R     &kp S     &kp T     &kp G     ___            ___       &kp M     &kp N     &kp E     &kp I     &kp O     &kp FSLH
-                ___       &kp Z     &kp X     &kp C     &kp D     &kp V                              &kp K     &kp H     &kp COMMA &kp DOT   &kp SEMI  ___
-                ___       ___       ___       ___       ___                                                    ___       ___       ___       ___       ___
+                ___       &kp EXCL  &kp AT    &kp LBKT  &kp RBKT  &kp EQUAL ___            ___       &kp FSLH  &kp N7    &kp N8    &kp N9    &kp STAR  &kp RA(W)
+                ___       &kp HASH  &kp DLLR  &kp LPAR  &kp RPAR  &kp AMPS  ___            ___       &kp MINUS &kp N4    &kp N5    &kp N6    &kp RA(P) &kp RA(Q)
+                ___       &kp PRCNT &kp CARET &kp LBRC  &kp RBRC  &kp TILDE                          &kp PLUS  &kp N1    &kp N2    &kp N3    &kp UNDER &kp ENTER
+                ___       ___       ___       ___       ___                                                    U_WH_D    U_WH_U    U_BTN1    U_BTN2    ___
                                                                   ___       ___            ___       ___
-                                                        ___       ___       ___            ___       ___       ___
+                                                        ___       ___       &kp K_APP      ___       ___       ___
                                                                             ___            ___
             >;
         };
 
         keypad {
             bindings = <
-                ___       ___       ___       ___       ___       ___       ___            ___       ___       &kp KP_NUM &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY ___
-                ___       ___       ___       ___       ___       ___       ___            ___       ___       &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    ___
-                ___       ___       ___       ___       ___       ___       ___            ___       ___       &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     ___
-                ___       ___       ___       ___       ___       ___                                ___       &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    ___
-                ___       ___       ___       ___       ___                                                    &kp KP_N0  ___          &kp KP_DOT    ___             ___
-                                                                  ___       ___            ___       ___
-                                                        ___       ___       ___            ___       ___       ___
-                                                                            ___            ___
-            >;
-        };
-
-        fn {
-            bindings = <
-                ___       &kp F1    &kp F2    &kp F3    &kp F4    &kp F5    ___            ___       &kp F6    &kp F7    &kp F8    &kp F9    &kp F10   &kp F11
-                ___       ___       ___       ___       ___       ___       ___            ___       ___       ___       ___       ___       ___       &kp F12
-                ___       ___       ___       ___       ___       ___       ___            ___       ___       ___       ___       ___       ___       ___
-                ___       ___       ___       ___       ___       ___                                ___       ___       ___       ___       ___       ___
-                ___       ___       ___       ___       ___                                                    ___       ___       ___       ___       ___
+                ___       ___       ___       ___       ___       ___       ___            ___       ___       ___        ___          ___           ___             ___
+                ___       ___       ___       ___       ___       ___       ___            ___       ___       &kp    N7  &kp    N8    &kp    N9     &kp KP_MULTIPLY ___
+                ___       ___       ___       ___       ___       ___       ___            ___       ___       &kp    N4  &kp    N5    &kp    N6     &kp KP_PLUS     ___
+                ___       ___       ___       ___       ___       ___                                ___       &kp    N1  &kp    N2    &kp    N3     &kp KP_ENTER    ___
+                ___       ___       ___       ___       ___                                                    &kp    N0  ___          &kp    DOT    ___             ___
                                                                   ___       ___            ___       ___
                                                         ___       ___       ___            ___       ___       ___
                                                                             ___            ___
