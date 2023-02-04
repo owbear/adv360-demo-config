@@ -16,8 +16,8 @@
 #define MOD 3
 #define MS 4
 
-#define LEFT_KEYS 0 1 2 3 4 5       14 15 16 17 18 19                28 29 30 31 32 33                   43 44 45 46 47
-#define RIGHT_KEYS 8 9 10 11 12 13                    22 23 24 25 26                   36 37 38 39 40 41                48 49 50 51 52
+#define LEFT_KEYS 0 1 2 3 4 5       14 15 16 17 18 19                28 29 30 31 32 33                   43 44 45 46 47                57 58
+#define RIGHT_KEYS 8 9 10 11 12 13                    22 23 24 25 26                   36 37 38 39 40 41                48 49 50 51 52       59 60 61 62
 
 #define COMBO(NAME, BINDINGS, KEYPOS) \
   combo_##NAME { \
@@ -72,11 +72,11 @@
 
         base_layer {
             bindings = <
-                ___          &kp F1    &kp F2       &kp F3       &kp F4        &kp F5    &tog KP        &mo MOD   &kp F6    &kp F7       &kp F8      &kp F9       &kp F10        &kp F11
+                &trans       &kp F1    &kp F2       &kp F3       &kp F4        &kp F5    &tog KP        &mo MOD   &kp F6    &kp F7       &kp F8      &kp F9       &kp F10        &kp F11
                 &kp TAB      &kp Q     &kp W        &kp E        &kp R         &kp T     &tog SYM       &tog MS   &kp Y     &kp U        &kp I       &kp O        &kp P          &kp F12
                 &mt LGUI ESC &kp A     &kp S        &lhm LALT D  &lhm LCTRL F  &kp G     &none          &none     &kp H     &rhm RCTRL J &rhm LALT K &rhm RSHFT L &rhm RGUI SEMI &kp SQT
                 &kp LSHFT    &kp Z     &lhm LSHFT X &kp C        &kp V         &kp B                              &kp N     &kp M        &kp COMMA   &kp DOT      &kp FSLH       &mt RSHFT BSLH
-                ___          &kp GRAVE &kp CAPS     &kp LEFT     &kp RIGHT                                                  &kp DOWN     &kp UP      &kp LBKT     &kp RBKT       ___
+                &trans       &kp GRAVE &kp CAPS     &kp LEFT     &kp RIGHT                                                  &kp DOWN     &kp UP      &kp LBKT     &kp RBKT       &trans
                                                                                &mo SYM   &kp LALT       &kp RALT  &mo SYM
                                                                  &kp BSPC      &kp DEL   &kp HOME       &kp PG_UP &kp ENTER &kp SPACE
                                                                                          &kp END        &kp PG_DN
