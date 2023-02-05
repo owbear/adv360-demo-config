@@ -18,6 +18,7 @@
 
 #define LEFT_KEYS 0 1 2 3 4 5       14 15 16 17 18 19                28 29 30 31 32 33                   43 44 45 46 47                57 58
 #define RIGHT_KEYS 8 9 10 11 12 13                    22 23 24 25 26                   36 37 38 39 40 41                48 49 50 51 52       59 60 61 62
+#define THUMB_KEYS 64 65 66 67 68 69 70 71 72 73 74
 
 #define COMBO(NAME, BINDINGS, KEYPOS) \
   combo_##NAME { \
@@ -39,9 +40,12 @@
             label = "HOMEROW_MODS_LEFT";
             #binding-cells = <2>;
             flavor = "balanced";
-            quick-tap-ms = <175>;
-            tapping-term-ms = <200>;
-            hold-trigger-key-positions = <RIGHT_KEYS>;
+
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;                // repeat on tap-into-hold
+            global-quick-tap-ms = <150>;         // requires PR #1387
+
+            hold-trigger-key-positions = <RIGHT_KEYS THUMB_KEYS>;
             hold-trigger-on-release;
             bindings = <&kp>, <&kp>;
         };
@@ -51,9 +55,12 @@
             label = "HOMEROW_MODS_RIGHT";
             #binding-cells = <2>;
             flavor = "balanced";
-            quick-tap-ms = <175>;
-            tapping-term-ms = <200>;
-            hold-trigger-key-positions = <LEFT_KEYS>;
+
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;                // repeat on tap-into-hold
+            global-quick-tap-ms = <150>;         // requires PR #1387
+
+            hold-trigger-key-positions = <LEFT_KEYS THUMB_KEYS>;
             hold-trigger-on-release;
             bindings = <&kp>, <&kp>;
         };
