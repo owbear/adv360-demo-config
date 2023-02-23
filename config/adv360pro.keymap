@@ -53,6 +53,10 @@
         COMBO(cut, &kp LS(DEL), 43 44)
         COMBO(copy, &kp LC(INS), 44 45)
         COMBO(paste, &kp LS(INS), 45 46)
+
+        COMBO(colon, &kp COLON, 44 40)
+        COMBO(double_quotes, &kp DOUBLE_QUOTES, 44 41)
+
         COMBO(qmark, &kp QMARK, 44 52)
         COMBO(pipe, &kp PIPE, 44 53)
     };
